@@ -7,3 +7,7 @@ photobooth/*/*/__pycache__
 photobooth.egg-info
 *.log
 *.log.*
+
+uploaded/*.jpg
+uploading/*.jpg
+to_upload/*.jpg

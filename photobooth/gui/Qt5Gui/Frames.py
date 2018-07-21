@@ -84,8 +84,8 @@ class IdleMessage(QtWidgets.QFrame):
         super().__init__()
         self.setObjectName('IdleMessage')
 
-        self._message_label = 'Hit the'
-        self._message_button = 'Button!'
+        self._message_label = 'Nacisnij'
+        self._message_button = 'PRZYCISK!!!!'
 
         self.initFrame(trigger_action)
 
@@ -108,10 +108,10 @@ class GreeterMessage(QtWidgets.QFrame):
         super().__init__()
         self.setObjectName('GreeterMessage')
 
-        self._text_title = 'Get ready!'
-        self._text_button = 'Start countdown'
+        self._text_title = 'Przygotuj sie!'
+        self._text_button = 'Rozpocznij odliczanie'
         if num_x * num_y > 1:
-            self._text_label = ('for {} pictures...'.format(num_x * num_y))
+            self._text_label = ('dla {} zdjecia...'.format(num_x * num_y))
         else:
             self._text_label = ''
 
@@ -142,10 +142,10 @@ class CaptureMessage(QtWidgets.QFrame):
         self.setObjectName('PoseMessage')
 
         if num_x * num_y > 1:
-            self._text = 'Picture {} of {}...'.format(num_picture,
+            self._text = 'Zdjecie {} z {}...'.format(num_picture,
                                                       num_x * num_y)
         else:
-            self._text = 'Taking a photo...'
+            self._text = 'Robie zdjecie...'
 
         self.initFrame()
 
@@ -336,7 +336,7 @@ class PostprocessMessage(Widgets.TransparentOverlay):
             return button
 
         buttons = [createButton(task) for task in tasks]
-        buttons.append(QtWidgets.QPushButton('Start over'))
+        buttons.append(QtWidgets.QPushButton('Nastepne zdjecie'))
         buttons[-1].clicked.connect(idle_handle)
 
         button_lay = QtWidgets.QGridLayout()
@@ -345,7 +345,7 @@ class PostprocessMessage(Widgets.TransparentOverlay):
             button_lay.addWidget(button, *pos)
 
         layout = QtWidgets.QVBoxLayout()
-        layout.addWidget(QtWidgets.QLabel('Happy?'))
+        layout.addWidget(QtWidgets.QLabel('Zadowolony? Zdjęcie poszło na instragram!!!'))
         layout.addLayout(button_lay)
         self.setLayout(layout)
 
